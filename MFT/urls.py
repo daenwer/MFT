@@ -19,11 +19,11 @@ from django.urls import path
 
 from credit_app.views import ProducerIdsAPIView
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path(
-        "api/producer-ids/<int:contract_id>/", ProducerIdsAPIView.as_view(), 
-        name="producer-ids"
+        "api/producer-ids/<int:contract_id>/",
+        ProducerIdsAPIView.as_view(),
+        name="producer-ids",
     ),
 ]

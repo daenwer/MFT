@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 80
+exclude =
+    .git,
+    __pycache__,
+    venv
+    credit_app/migrations/
+    MFT/private_settings.py
+    MFT/settings.py

@@ -14,3 +14,8 @@ private_settings.py
 
 ### Запуск тестов внутри контейнера
 `pytest credit_app/tests.py`
+
+### Запуск линетров внутри контейнера
+`black .`<br/>
+`isort .`<br/>
+`flake8`<br/>
