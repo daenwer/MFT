@@ -1,0 +1,5 @@
+.idea
+venv/
+.vscode/
+**/__pycache__
+MFT/private_settings.py
