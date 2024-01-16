@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: &img web
+    container_name: mft_web
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: "MFT.settings"
+
+  postgres:
+    image: postgres
+    restart: always
+    container_name: mft_postgres
+    environment:
+      POSTGRES_DB: mft
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
